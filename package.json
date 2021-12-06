@@ -1,5 +1,5 @@
 {
-  "name": "@marceloglacial/create-rds-app",
+  "name": "create-rds-app",
   "version": "0.0.1",
   "bin": "./bin/cli.js",
   "scripts": {
