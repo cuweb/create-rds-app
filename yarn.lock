@@ -114,10 +114,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@marceloglacial/rds-beta@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@marceloglacial/rds-beta/-/rds-beta-0.0.6.tgz#cec44ce471a885a8bf5c19db7b354a1deaee01fa"
-  integrity sha512-OH1aWrtRo3AK//Zgp/Z3Do8bktKqtIYorwmuJtnji4mbTy055v3cyGdoZL5+MPpMxgxRJA8xktPk58djd24jKA==
+"@marceloglacial/rds-beta@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@marceloglacial/rds-beta/-/rds-beta-0.0.8.tgz#19f2d34ca437d7ab9bd95df8953224c62882182d"
+  integrity sha512-iVQsZiT6eIf/uhhVaaQGsek8PcK33Id/eNxGrV+8Gew6UuQhK/3oSNPfeo0RPGpx1qBFLuSlMPdK2W6OtI9SZw==
+  dependencies:
+    react "^17.0.1"
+    react-dom "^17.0.1"
 
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
@@ -2317,7 +2320,7 @@ raw-body@2.4.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-dom@17.0.2:
+react-dom@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
   integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
@@ -2341,7 +2344,7 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react@17.0.2:
+react@^17.0.1:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
