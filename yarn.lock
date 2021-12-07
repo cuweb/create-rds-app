@@ -114,10 +114,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@marceloglacial/rds-beta@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@marceloglacial/rds-beta/-/rds-beta-0.0.12.tgz#1444f10cee5c25a1e20deba7ee83c877368f04a9"
-  integrity sha512-hYAEGtcP6LQD5dQPDY8tSAeZc6/k1PrBOs63skAz0PpdMwsOcOipetmY0WvV6k78xRL4UQ2H+e88T1TZsBUbzQ==
+"@marceloglacial/rds-beta@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@marceloglacial/rds-beta/-/rds-beta-0.0.13.tgz#e103312ff74ec8272ef62a0699f941464dc12da7"
+  integrity sha512-XnK9jzRkFGJi8pnRdm0kCGEAoFIH4bIudT2dUeUqkoqKjykQeZg50rotxzLggzFbjY3HmOAnIAPN9stTuA2fzQ==
   dependencies:
     react "^17.0.1"
     react-dom "^17.0.1"

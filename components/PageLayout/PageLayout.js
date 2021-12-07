@@ -1,4 +1,11 @@
-import { Layout, Aside, Main, Sidebar, Banner } from '@marceloglacial/rds-beta';
+import {
+  Layout,
+  Aside,
+  Main,
+  Sidebar,
+  Banner,
+  Footer,
+} from '@marceloglacial/rds-beta';
 
 const PageLayout = (props) => {
   const { children } = props;
@@ -28,6 +35,9 @@ const PageLayout = (props) => {
           </p>
         </Sidebar>
       </Layout>
+      <footer>
+        <Footer type='brand' />
+      </footer>
     </>
   );
 };
