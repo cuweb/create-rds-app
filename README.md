@@ -7,9 +7,11 @@ This is a [Raven Design System](https://ravendesignsystem.github.io/rds/) projec
 
 ```bash
 npx create-rds-app <project-name>
+```
 
-#or
+or
 
+```bash
 yarn create rds-app <project-name>
 ```
 
@@ -18,6 +20,9 @@ yarn create rds-app <project-name>
 
 ```bash
 yarn install
+```
+
+```bash
 yarn dev
 ```
 
@@ -29,17 +34,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```bash
 yarn build
 ```
-
-
-## Publish 
-
-```bash
-yarn publish --access public
-```
-
-
-
-
 
 ## Resources
 
