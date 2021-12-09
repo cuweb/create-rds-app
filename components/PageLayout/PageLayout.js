@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {
   Layout,
   Aside,
@@ -7,10 +8,41 @@ import {
   Footer,
 } from '@marceloglacial/rds-beta';
 
+const siteInfo = {
+  siteTitle: 'Ravens Design System',
+  siteDescription:
+    'RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. ',
+  siteKeywords: 'rds, design system',
+  siteImage: {
+    formats: {
+      small: {
+        url: 'https://cu-rds.s3.amazonaws.com/docs/assets/home-hero-3.png',
+      },
+    },
+  },
+  siteFavicon: {
+    url: 'https://carleton.ca/favicon.ico',
+  },
+};
+
 const PageLayout = (props) => {
   const { children } = props;
+  const { siteTitle, siteDescription, siteKeywords, siteImage, siteFavicon } =
+    siteInfo;
+
   return (
     <>
+      <Head>
+        <title>{siteTitle}</title>
+        <meta name='robots' content='index, follow' />
+        <meta name='description' content={siteDescription} />
+        <meta name='keywords' content={siteKeywords} />
+        <meta property='og:title' content={siteTitle} />
+        <meta property='og:description' content={siteDescription} />
+        <meta property='og:image' content={siteImage?.formats.small.url} />
+        <link rel='apple-touch-icon' href={siteImage?.formats.small.url} />
+        <link rel='icon' type='image/png' href={siteFavicon.url}></link>
+      </Head>
       <header>
         <Banner title='Welcome to RDS' />
       </header>
