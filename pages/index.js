@@ -4,7 +4,7 @@ import PageLayout from '../components/PageLayout/PageLayout';
 export default function Home() {
   return (
     <>
-      <Masthead title='Raves Design System' />
+      <Masthead title='Ravens Design System' />
       <PageLayout>
         <h2>Multicol AMA (Aside + Main + Aside)</h2>
         <p>
