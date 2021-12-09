@@ -48,7 +48,7 @@ const PageLayout = (props) => {
       </header>
       <Layout type='ama'>
         <Aside>
-          <h3>Left Aside</h3>
+          <h2>Left Aside</h2>
           <p>
             The left-side aside is intended for site navigation using the Menu
             block. The column has a fixed width of 200px, and disappears from
@@ -59,7 +59,7 @@ const PageLayout = (props) => {
         </Aside>
         <Main>{children}</Main>
         <Sidebar>
-          <h3>Right aside</h3>
+          <h2>Right aside</h2>
           <p>
             The right-side aside is intended for providing content related to
             what is dispplayed in the main area. The column has a fixed width of
