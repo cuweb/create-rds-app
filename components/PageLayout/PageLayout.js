@@ -3,9 +3,9 @@ import {
   Layout,
   Aside,
   Main,
-  Sidebar,
   Banner,
-  Footer,
+  FooterSitemap,
+  FooterBrand,
 } from '@marceloglacial/rds-beta';
 
 const siteInfo = {
@@ -46,7 +46,7 @@ const PageLayout = (props) => {
       <header>
         <Banner title='Welcome to RDS' />
       </header>
-      <Layout type='ama'>
+      <Layout type='am'>
         <Aside>
           <h2>Left Aside</h2>
           <p>
@@ -58,17 +58,10 @@ const PageLayout = (props) => {
           </p>
         </Aside>
         <Main>{children}</Main>
-        <Sidebar>
-          <h2>Right aside</h2>
-          <p>
-            The right-side aside is intended for providing content related to
-            what is dispplayed in the main area. The column has a fixed width of
-            270px, and drops below the main content area below 810px.
-          </p>
-        </Sidebar>
       </Layout>
       <footer>
-        <Footer type='brand' />
+        <FooterSitemap />
+        <FooterBrand />
       </footer>
     </>
   );

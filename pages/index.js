@@ -1,18 +1,33 @@
-import { Masthead } from '@marceloglacial/rds-beta';
+import { AlertHeader, Masthead, TextImage } from '@marceloglacial/rds-beta';
+import { useState } from 'react';
 import PageLayout from '../components/PageLayout/PageLayout';
 
 export default function Home() {
+  const [isHidden, setIsHidden] = useState(false);
+
+  const handleClose = () => {
+    setIsHidden(true);
+  };
+
   return (
     <>
       <Masthead title='Ravens Design System' />
+      <AlertHeader
+        description='Due to inclement weather the university will be closed January 28, 2019. Please see the <a href="https://carleton.ca/ses/exam-schedule/">updated exam schedule</a>.'
+        handleClose={() => handleClose(false)}
+        isHidden={isHidden}
+        title='University closure, January 28, 2021!'
+      />
       <PageLayout>
-        <h2>Multicol AMA (Aside + Main + Aside)</h2>
-        <p>
-          This is another two column layout, but this time it consists of a main
-          content area, immediately followed by the aside. The base class name
-          l-multicol-ma reflects the order that the elements appears in its used
-          of ma.
-        </p>
+        <TextImage
+          content='It is important to note the text is not intended to wrap around the image. In general, the amount of text used should be the same height as the image on large screens. This will, of course, differ if you use a large or small block size.'
+          direction='right'
+          image={{
+            alt: 'image',
+            src: 'https://via.placeholder.com/640x480',
+          }}
+          title='Image to the Right'
+        />
       </PageLayout>
     </>
   );
