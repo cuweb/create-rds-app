@@ -1,21 +1,23 @@
 {
-  "name": "create-rds-app",
-  "version": "0.1.5",
-  "bin": "./bin/cli.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export -o docs/",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
-  "devDependencies": {
-    "@marceloglacial/rds-beta": "^0.7.4",
-    "eslint": "8.4.0",
-    "eslint-config-next": "12.0.7"
-  }
+    "name": "create-rds-app",
+    "version": "0.1.5",
+    "bin": "./bin/cli.js",
+    "scripts": {
+        "dev": "next dev",
+        "build": "yarn format && yarn lint && next build && next export -o docs/",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --write ."
+    },
+    "dependencies": {
+        "next": "^12.0.9",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "devDependencies": {
+        "@marceloglacial/rds-beta": "^0.9.0",
+        "eslint": "8.4.0",
+        "eslint-config-next": "12.0.7",
+        "prettier": "2.5.1"
+    }
 }
