@@ -8,27 +8,28 @@ import {
     FooterBrand,
 } from '@marceloglacial/rds-beta'
 
-const siteInfo = {
-    siteTitle: 'Ravens Design System',
-    siteDescription:
-        'RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. ',
-    siteKeywords: 'rds, design system',
-    siteImage: {
-        formats: {
-            small: {
-                url: 'https://cu-rds.s3.amazonaws.com/docs/assets/home-hero-3.png',
-            },
-        },
-    },
+interface PageLayoutProps {
+    siteTitle: string
+    siteDescription: string
+    siteKeywords: string
+    siteImage: SiteImageProps
     siteFavicon: {
-        url: 'https://carleton.ca/favicon.ico',
-    },
+        url: string
+    }
 }
 
-const PageLayout = (props: { children: any }) => {
+interface SiteImageProps {
+    formats: {
+        small: {
+            url: string
+        }
+    }
+}
+
+const PageLayout: React.FC<PageLayoutProps> = (props) => {
     const { children } = props
     const { siteTitle, siteDescription, siteKeywords, siteImage, siteFavicon } =
-        siteInfo
+        props
 
     return (
         <>
