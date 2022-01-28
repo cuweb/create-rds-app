@@ -25,7 +25,7 @@ const siteInfo = {
     },
 }
 
-const PageLayout = (props) => {
+const PageLayout = (props: { children: any }) => {
     const { children } = props
     const { siteTitle, siteDescription, siteKeywords, siteImage, siteFavicon } =
         siteInfo
