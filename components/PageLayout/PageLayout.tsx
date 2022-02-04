@@ -7,28 +7,30 @@ import {
     FooterSitemap,
     FooterBrand,
 } from '@marceloglacial/rds-beta'
+import PageSideBar from 'components/PageSidebar/PageSidebar'
 
-const siteInfo = {
-    siteTitle: 'Ravens Design System',
-    siteDescription:
-        'RDS, Carleton University’s design system, is a living digital organism uniting campus wide teams around a common visual language. ',
-    siteKeywords: 'rds, design system',
-    siteImage: {
-        formats: {
-            small: {
-                url: 'https://cu-rds.s3.amazonaws.com/docs/assets/home-hero-3.png',
-            },
-        },
-    },
+interface PageLayoutProps {
+    siteTitle: string
+    siteDescription: string
+    siteKeywords: string
+    siteImage: SiteImageProps
     siteFavicon: {
-        url: 'https://carleton.ca/favicon.ico',
-    },
+        url: string
+    }
 }
 
-const PageLayout = (props) => {
+interface SiteImageProps {
+    formats: {
+        small: {
+            url: string
+        }
+    }
+}
+
+const PageLayout: React.FC<PageLayoutProps> = (props) => {
     const { children } = props
     const { siteTitle, siteDescription, siteKeywords, siteImage, siteFavicon } =
-        siteInfo
+        props
 
     return (
         <>
@@ -54,15 +56,7 @@ const PageLayout = (props) => {
             </header>
             <Layout type='am'>
                 <Aside>
-                    <h2>Left Aside</h2>
-                    <p>
-                        The left-side aside is intended for site navigation
-                        using the Menu block. The column has a fixed width of
-                        200px, and disappears from view below 810px. While the
-                        main purposes of this aside is to contain a site
-                        navigation, additional aside blocks can be added below
-                        the menu.
-                    </p>
+                    <PageSideBar />
                 </Aside>
                 <Main>{children}</Main>
             </Layout>
