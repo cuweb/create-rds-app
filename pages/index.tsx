@@ -5,9 +5,20 @@ import PageLayout from 'components/PageLayout/PageLayout'
 export default function Home() {
     return (
         <>
-            <Masthead title='Ravens Design System'>
-                <a href='#'>Menu Item</a>
-            </Masthead>
+            <Masthead
+                title='Ravens Design System'
+                url={'/'}
+                menu={[
+                    {
+                        title: 'Item 1',
+                        linl: '#',
+                    },
+                    {
+                        title: 'Item 2',
+                        linl: '#',
+                    },
+                ]}
+            />
             <PageLayout {...siteInfo}>
                 <p>
                     Carleton&apos;s Raven Design System (RDS) was built to help

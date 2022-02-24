@@ -10,12 +10,12 @@
         "format": "prettier --write ."
     },
     "dependencies": {
-        "next": "12.0.9",
+        "next": "^12.1.0",
         "react": "17.0.2",
         "react-dom": "17.0.2"
     },
     "devDependencies": {
-        "@marceloglacial/rds-beta": "^0.9.0",
+        "@marceloglacial/rds-beta": "^0.10.0",
         "@types/node": "17.0.13",
         "@types/react": "17.0.38",
         "eslint": "8.7.0",
