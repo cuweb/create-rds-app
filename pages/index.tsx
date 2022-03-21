@@ -1,7 +1,17 @@
 import siteInfo from 'data/siteinfo.json'
-import { Masthead } from '@marceloglacial/rds-beta'
+import { Masthead, ButtonCTA } from '@marceloglacial/rds-beta'
 import PageLayout from 'components/PageLayout/PageLayout'
-
+const actions = {
+    login: {
+        title: 'Login to Your App',
+        forgetLink: '/',
+        registerLink: '/',
+        onSubmit: (e: any) => {
+            e.preventDefault()
+            alert('Login')
+        },
+    },
+}
 export default function Home() {
     return (
         <>
@@ -18,6 +28,7 @@ export default function Home() {
                         linl: '#',
                     },
                 ]}
+                actions={actions}
             />
             <PageLayout {...siteInfo}>
                 <p>
