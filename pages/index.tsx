@@ -1,16 +1,15 @@
 import siteInfo from 'data/siteinfo.json'
-import { Masthead, ButtonCTA } from '@marceloglacial/rds-beta'
+import { Masthead } from '@marceloglacial/rds-beta'
 import PageLayout from 'components/PageLayout/PageLayout'
 const actions = {
-    login: {
-        title: 'Login to Your App',
-        forgetLink: '/',
-        registerLink: '/',
-        onSubmit: (e: any) => {
-            e.preventDefault()
-            alert('Login')
+    
+    buttons: [
+        {
+            title: 'Sign In',
+            link: '/api/auth/signin',
+            color: 'red',
         },
-    },
+    ],
 }
 export default function Home() {
     return (
