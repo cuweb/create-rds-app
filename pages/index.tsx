@@ -2,7 +2,6 @@ import siteInfo from 'data/siteinfo.json'
 import { Masthead } from '@marceloglacial/rds-beta'
 import PageLayout from 'components/PageLayout/PageLayout'
 const actions = {
-    
     buttons: [
         {
             title: 'Sign In',
