@@ -1,16 +1,23 @@
 import siteInfo from 'data/siteinfo.json'
 import { Masthead } from '@marceloglacial/rds-beta'
 import PageLayout from 'components/PageLayout/PageLayout'
-const actions = {
-    buttons: [
-        {
-            title: 'Sign In',
-            link: '/api/auth/signin',
-            color: 'red',
-        },
-    ],
-}
+import { useSession } from 'next-auth/react'
+
 export default function Home() {
+    const { data: session } = useSession()
+
+    const actions = {
+        buttons: [
+            {
+                title: session?.user?.name || 'Sign In',
+                link: session?.user ? '/api/auth/signout' : '/api/auth/signin',
+                color: 'red',
+            },
+        ],
+    }
+
+    console.log(session)
+
     return (
         <>
             <Masthead
