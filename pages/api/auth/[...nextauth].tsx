@@ -37,9 +37,9 @@ export default NextAuth({
             },
             profile(profile: ProfileProps) {
                 return {
+                    id: profile.sid,
                     name: profile.unique_name,
-                    id: profile.upn,
-                    sid: profile.sid,
+                    email: profile.upn,
                 }
             },
         },
