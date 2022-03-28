@@ -57,9 +57,13 @@ export default NextAuth({
             if (account) {
                 token.accessToken = account.access_token
             }
+            return token
+        },
 
+        async session({ session, token }) {
+            session.accessToken = token.accessToken
             const headers = new Headers()
-            const bearer = `Bearer ${token.accessToken}`
+            const bearer = `Bearer ${session.accessToken}`
             headers.append('Authorization', bearer)
             const options = {
                 method: 'GET',
@@ -78,16 +82,9 @@ export default NextAuth({
                     return res.json()
                 })
                 .then((data) => {
-                    token.data = data
+                    session.data = data
                 })
                 .catch((err) => console.log(err))
-
-            return token
-        },
-
-        async session({ session, token }) {
-            session.accessToken = token.accessToken
-            session.data = token.data
             return session
         },
     },
