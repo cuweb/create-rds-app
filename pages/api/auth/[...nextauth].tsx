@@ -15,7 +15,6 @@ interface ProfileProps {
 }
 
 export default NextAuth({
-
     providers: [
         {
             clientId: '38e7fd2b-1c52-46b7-87d9-cfc0522eab65',
@@ -52,46 +51,44 @@ export default NextAuth({
     theme: {
         colorScheme: 'light',
     },
-    
+
     callbacks: {
-        async jwt({ token, account}) {
+        async jwt({ token, account }) {
             if (account) {
                 token.accessToken = account.access_token
             }
-            const str = JSON.stringify(token)
-            console.log("JWT token: " + str)
 
-            console.log("***************")
-            const headers = new Headers();
+            const headers = new Headers()
             const bearer = `Bearer ${token.accessToken}`
-            headers.append("Authorization", bearer);
+            headers.append('Authorization', bearer)
             const options = {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                  Authorization: `Bearer ${token.accessToken}`,
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
+                    Authorization: bearer,
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
                 },
-              };
+            }
 
-            await fetch("https://apistoreuat3.carleton.ca/api/v1/tax/personinfo", options) //from intranet .env file
-              .then((res) => {
-                console.log(res.json()); //Promise { <pending> }
-              })
-              .then((data) => {
-                  console.log(JSON.stringify(data)); //undefined
-              })
-              .catch((err) => console.log(err));
-            console.log("***************")
+            await fetch(
+                'https://apistoreuat3.carleton.ca/api/v1/employee/details',
+                options
+            ) //from intranet .env file
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    token.data = data
+                })
+                .catch((err) => console.log(err))
+
             return token
         },
-        
-        async session({ session, token}) {
+
+        async session({ session, token }) {
             session.accessToken = token.accessToken
+            session.data = token.data
             return session
         },
-
-
     },
-    
 })
