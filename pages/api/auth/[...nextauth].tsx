@@ -20,7 +20,7 @@ export default NextAuth({
             clientId: '38e7fd2b-1c52-46b7-87d9-cfc0522eab65',
             clientSecret: '6cNffK4TE_hlsWU8z1lXFLL0D079nvucgrXQdOjf',
             id: 'Intranet',
-            name: 'Carleton University Login',
+            name: 'Carleton Credentials',
             type: 'oauth',
             token: 'https://cufed.carleton.ca/adfs/oauth2/token',
             userinfo: 'https://cufed.carleton.ca/adfs/oauth2/',

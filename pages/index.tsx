@@ -5,11 +5,15 @@ import { useSession } from 'next-auth/react'
 
 export default function Home() {
     const { data: session } = useSession()
-
+    const welcome = session? `Welcome ${session?.user?.name?.split("\\")[1] ||session?.user?.name}` : "Welcome guest. Please sign in"
     const actions = {
+        
         buttons: [
             {
-                title: session?.user?.name || 'Sign In',
+                title: welcome 
+            },
+            {
+                title: session? "Sign Out" : 'Sign In',
                 link: session?.user ? '/api/auth/signout' : '/api/auth/signin',
                 color: 'red',
             },
