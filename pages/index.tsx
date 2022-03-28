@@ -20,8 +20,6 @@ export default function Home() {
         ],
     }
 
-    console.log(session)
-
     return (
         <>
             <Masthead
