@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
-
+import jwt_decode from 'jwt-decode'
 interface ProfileProps {
     aud: string
     iss: string
@@ -62,6 +62,19 @@ export default NextAuth({
 
         async session({ session, token }) {
             session.accessToken = token.accessToken
+            if (session != null) {
+                const accessToken = JSON.stringify(session.accessToken)
+                const decodedValue = jwt_decode(accessToken)
+                const cuGroups = Object.values(Object(decodedValue).cuGroups)
+                cuGroups.forEach((element, index) => {
+                    cuGroups[index] = JSON.stringify(element)
+                        .split(',')[0]
+                        .split('CN=')[1]
+                })
+                session.udcid = Object(decodedValue).udcid
+                session.curoles = Object(decodedValue).curoles.split(',')
+                session.cuGroups = cuGroups
+            }
             const headers = new Headers()
             const bearer = `Bearer ${session.accessToken}`
             headers.append('Authorization', bearer)

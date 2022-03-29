@@ -1,7 +1,6 @@
 import siteInfo from 'data/siteinfo.json'
 import { Masthead } from '@marceloglacial/rds-beta'
 import PageLayout from 'components/PageLayout/PageLayout'
-import OAuthInfo from 'utils/OAuthInfo'
 import { useSession } from 'next-auth/react'
 
 export default function Home() {
@@ -23,9 +22,10 @@ export default function Home() {
             },
         ],
     }
+    console.log({session})
     return (
         <>
-            <OAuthInfo session={session} />
+            {/* <OAuthInfo session={session} /> */}
             <Masthead
                 title='Ravens Design System'
                 url={'/'}
