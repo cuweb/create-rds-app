@@ -36,7 +36,6 @@ export default NextAuth({
                 },
             },
             profile(profile: ProfileProps) {
-                console.log({profile})
                 return {
                     id: profile.sid,
                     name: profile.unique_name,
@@ -58,7 +57,6 @@ export default NextAuth({
             if (account) {
                 token.accessToken = account.access_token
             }
-            console.log({token})
             return token
         },
 
@@ -84,7 +82,6 @@ export default NextAuth({
                     return res.json()
                 })
                 .then((data) => {
-                    console.log({data})
                     session.data = data
                 })
                 .catch((err) => console.log(err))
