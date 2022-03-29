@@ -78,6 +78,7 @@ export default NextAuth({
             const headers = new Headers()
             const bearer = `Bearer ${session.accessToken}`
             headers.append('Authorization', bearer)
+            const requestInfo = process.env.NEXT_PUBLIC_BANNER_API_URL || ''
             const options = {
                 method: 'GET',
                 headers: {
@@ -87,10 +88,7 @@ export default NextAuth({
                 },
             }
 
-            await fetch(
-                'https://apistoreuat3.carleton.ca/api/v1/employee/details',
-                options
-            ) //from intranet .env file
+            await fetch(requestInfo, options) //from intranet .env file
                 .then((res) => {
                     return res.json()
                 })

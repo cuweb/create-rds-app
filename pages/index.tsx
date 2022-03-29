@@ -22,7 +22,7 @@ export default function Home() {
             },
         ],
     }
-    console.log({session})
+    console.log({ session })
     return (
         <>
             {/* <OAuthInfo session={session} /> */}
