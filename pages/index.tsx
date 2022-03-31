@@ -22,10 +22,9 @@ export default function Home() {
             },
         ],
     }
-    console.log({ session })
+    //console.log({ session })
     return (
         <>
-            {/* <OAuthInfo session={session} /> */}
             <Masthead
                 title='Ravens Design System'
                 url={'/'}
