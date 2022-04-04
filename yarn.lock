@@ -46,10 +46,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@marceloglacial/rds-beta@^0.12.1":
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/@marceloglacial/rds-beta/-/rds-beta-0.12.1.tgz#1bc405ac4b3f00b5252bc693a996c2d87ad2533e"
-  integrity sha512-He9UxueC/PkmNo2II2id39cvvUBwJr7U+XSEVc7yN0uqvqkpGuvXUeNX2sseP55dtL0BHW2KlOMjlG9MCcbhfQ==
+"@marceloglacial/rds-beta@^0.12.3":
+  version "0.12.3"
+  resolved "https://registry.yarnpkg.com/@marceloglacial/rds-beta/-/rds-beta-0.12.3.tgz#30fc21492b0cfb638bb64c7e284bf5fb21ba1368"
+  integrity sha512-d7pK9mzG424S/vk057T3BeM9FLNEiksl6b9Mpla77GvdGCTymym7o32dmplXaoXZ9X5r/BzaV9XU5wew0myPCQ==
   dependencies:
     formik "^2.2.9"
     prismjs "^1.27.0"
