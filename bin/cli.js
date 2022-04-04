@@ -13,17 +13,19 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2]
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/cuweb/create-rds-app.git ${repoName}`
-const installDepsCommand = `cd ${repoName} && npm install`
+const cleaningCommand = `cd ${repoName} && rm -rf bin`
 
 console.log(`Cloning the repository with name ${repoName}`)
 const checkedOut = runCommand(gitCheckoutCommand)
 if (!checkedOut) process.exit(-1)
 
-console.log(`Installing dependencies for ${repoName}`)
-const installedDeps = runCommand(installDepsCommand)
+console.log(`Cleaning ${repoName}`)
+const installedDeps = runCommand(cleaningCommand)
 if (!installedDeps) process.exit(-1)
 
 console.log(
     'Congratulations! You are ready. Follow the following commands to start'
 )
-console.log(`cd ${repoName} && npm run dev`)
+console.log(`cd ${repoName}`)
+console.log(`npm install`)
+console.log(`npm run dev`)
