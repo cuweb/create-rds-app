@@ -1,11 +1,11 @@
 {
     "name": "create-rds-app",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "bin": "./bin/cli.js",
     "scripts": {
         "dev": "next dev -p 80",
-        "build": "yarn format && yarn lint && next build && next export -o docs/",
-        "start": "next start",
+        "build": "yarn format && yarn lint && next build",
+        "start": "next start -p 80",
         "lint": "next lint",
         "format": "prettier --write ."
     },
