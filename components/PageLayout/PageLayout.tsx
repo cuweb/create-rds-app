@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import {
     Layout,
-    Aside,
-    Main,
     Banner,
     FooterSitemap,
     FooterBrand,
+    Masthead,
 } from '@marceloglacial/rds-beta'
-import PageSideBar from 'components/PageSidebar/PageSidebar'
+import { useSession } from 'next-auth/react'
 
 interface PageLayoutProps {
     siteTitle: string
@@ -31,6 +30,21 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
     const { children } = props
     const { siteTitle, siteDescription, siteKeywords, siteImage, siteFavicon } =
         props
+    const { data: sessionInfo } = useSession()
+    // @ts-ignore TODO: Create banner types
+    const userInfo = sessionInfo?.data?.biographical || {}
+
+    const actions = {
+        buttons: [
+            {
+                title: sessionInfo ? `Logout` : 'Login',
+                link: sessionInfo?.user
+                    ? '/api/auth/signout'
+                    : '/api/auth/signin',
+                icon: 'github',
+            },
+        ],
+    }
 
     return (
         <>
@@ -52,15 +66,13 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
                 <link rel='icon' type='image/png' href={siteFavicon.url}></link>
             </Head>
             <header>
-                <Banner title='Welcome to RDS' />
+                <Banner
+                    title={`Welcome to RDS ${userInfo.preferredName || ''}`}
+                />
             </header>
-            <Layout type='am'>
-                <Aside>
-                    <PageSideBar />
-                </Aside>
-                <Main>{children}</Main>
-            </Layout>
+            <Layout>{children}</Layout>
             <footer>
+                <Masthead title={siteTitle} actions={actions} />
                 <FooterSitemap />
                 <FooterBrand />
             </footer>
