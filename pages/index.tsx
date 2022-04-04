@@ -1,25 +1,12 @@
 import siteInfo from 'data/siteinfo.json'
-import { Masthead } from '@marceloglacial/rds-beta'
+import { Ublock } from '@marceloglacial/rds-beta'
 import PageLayout from 'components/PageLayout/PageLayout'
+import { FC } from 'react'
 
-export default function Home() {
+const Home: FC = (): JSX.Element => {
     return (
-        <>
-            <Masthead
-                title='Ravens Design System'
-                url={'/'}
-                menu={[
-                    {
-                        title: 'Item 1',
-                        linl: '#',
-                    },
-                    {
-                        title: 'Item 2',
-                        linl: '#',
-                    },
-                ]}
-            />
-            <PageLayout {...siteInfo}>
+        <PageLayout {...siteInfo}>
+            <Ublock>
                 <p>
                     Carleton&apos;s Raven Design System (RDS) was built to help
                     deliver a unified experience across our many digital
@@ -29,7 +16,8 @@ export default function Home() {
                     build consistent, on-brand, and user-focused websites and
                     applications.
                 </p>
-            </PageLayout>
-        </>
+            </Ublock>
+        </PageLayout>
     )
 }
+export default Home
