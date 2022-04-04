@@ -33,7 +33,6 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
     const { data: sessionInfo } = useSession()
     // @ts-ignore TODO: Create banner types
     const userInfo = sessionInfo?.data?.biographical || {}
-    console.log(sessionInfo)
 
     const actions = {
         buttons: [
@@ -67,7 +66,9 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
                 <link rel='icon' type='image/png' href={siteFavicon.url}></link>
             </Head>
             <header>
-                <Banner title={`Welcome to RDS ${userInfo.preferredName}`} />
+                <Banner
+                    title={`Welcome to RDS ${userInfo.preferredName || ''}`}
+                />
             </header>
             <Layout>{children}</Layout>
             <footer>
