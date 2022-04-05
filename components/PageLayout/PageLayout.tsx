@@ -34,6 +34,8 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
     // @ts-ignore TODO: Create banner types
     const userInfo = sessionInfo?.data?.biographical || {}
 
+    console.log(sessionInfo)
+
     const actions = {
         buttons: [
             {
@@ -41,7 +43,7 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
                 link: sessionInfo?.user
                     ? '/api/auth/signout'
                     : '/api/auth/signin',
-                icon: 'github',
+                icon: 'lock',
             },
         ],
     }
