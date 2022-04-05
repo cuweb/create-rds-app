@@ -6,7 +6,8 @@ import {
     FooterBrand,
     Masthead,
 } from '@marceloglacial/rds-beta'
-import { useSession } from 'next-auth/react'
+import { useContext } from 'react'
+import { UserContext } from 'context/UserContext'
 
 interface PageLayoutProps {
     siteTitle: string
@@ -30,19 +31,13 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
     const { children } = props
     const { siteTitle, siteDescription, siteKeywords, siteImage, siteFavicon } =
         props
-    const { data: sessionInfo } = useSession()
-    // @ts-ignore TODO: Create banner types
-    const userInfo = sessionInfo?.data?.biographical || {}
-
-    console.log(sessionInfo)
+    const { userInfo } = useContext(UserContext)
 
     const actions = {
         buttons: [
             {
-                title: sessionInfo ? `Logout` : 'Login',
-                link: sessionInfo?.user
-                    ? '/api/auth/signout'
-                    : '/api/auth/signin',
+                title: userInfo ? `Logout` : 'Login',
+                link: userInfo?.user ? '/api/auth/signout' : '/api/auth/signin',
                 icon: 'lock',
             },
         ],
