@@ -1,6 +1,6 @@
 {
     "name": "create-rds-app",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "bin": "./bin/cli.js",
     "scripts": {
         "dev": "next dev -p 80",
