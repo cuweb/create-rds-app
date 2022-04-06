@@ -13,7 +13,7 @@ const runCommand = (command) => {
 
 const repoName = process.argv[2]
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/cuweb/create-rds-app.git ${repoName}`
-const cleaningCommand = `cd ${repoName} && rm -rf bin && m -rf .git`
+const cleaningCommand = `cd ${repoName} && rm -rf bin && rm -rf .git && rm -rf .github`
 
 console.log(`Cloning the repository with name ${repoName}`)
 const checkedOut = runCommand(gitCheckoutCommand)
