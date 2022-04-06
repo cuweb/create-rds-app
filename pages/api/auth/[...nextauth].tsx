@@ -1,5 +1,4 @@
 import NextAuth from 'next-auth'
-import GithubProvider from 'next-auth/providers/github'
 import jwt_decode from 'jwt-decode'
 interface ProfileProps {
     aud: string
@@ -17,8 +16,8 @@ interface ProfileProps {
 export default NextAuth({
     providers: [
         {
-            clientId: '38e7fd2b-1c52-46b7-87d9-cfc0522eab65',
-            clientSecret: '6cNffK4TE_hlsWU8z1lXFLL0D079nvucgrXQdOjf',
+            clientId: process.env.NEXT_CU_CLIENT_ID,
+            clientSecret: process.env.NEXT_CU_CLIENT_SECRET,
             id: 'Intranet',
             name: 'Carleton Credentials',
             type: 'oauth',

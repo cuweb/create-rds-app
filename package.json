@@ -1,13 +1,20 @@
 {
     "name": "create-rds-app",
-    "version": "0.5.2",
+    "version": "0.6.0",
     "bin": "./bin/cli.js",
     "scripts": {
         "dev": "next dev -p 80",
-        "build": "yarn format && yarn lint && next build",
+        "build": "yarn lint && yarn format && next build",
         "start": "next start -p 80",
-        "lint": "next lint",
-        "format": "prettier --write ."
+        "format": "prettier -w .",
+        "lint": "eslint --fix ./**/*.tsx",
+        "nvmuse": "unset PREFIX && source $HOME/.nvm/nvm.sh && nvm install",
+        "predev": "test -n \"$NOPRESCRIPTS\" || yarn run nvmuse",
+        "prestart": "test -n \"$NOPRESCRIPTS\" || yarn run nvmuse",
+        "preinstall": "test -n \"$NOPRESCRIPTS\" || yarn run nvmuse",
+        "prebuild": "test -n \"$NOPRESCRIPTS\" || yarn run nvmuse",
+        "pretest": "test -n \"$NOPRESCRIPTS\" || yarn run nvmuse",
+        "prerelease": "rm -rf dist .next && yarn build"
     },
     "dependencies": {
         "jwt-decode": "^3.1.2",
@@ -18,7 +25,7 @@
         "react-dom": "^18.0.0"
     },
     "devDependencies": {
-        "@marceloglacial/rds-beta": "^0.12.3",
+        "@marceloglacial/rds-beta": "^0.13.0",
         "@types/node": "17.0.13",
         "@types/react": "17.0.38",
         "eslint": "8.7.0",

@@ -41,7 +41,7 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
                 link: sessionInfo?.user
                     ? '/api/auth/signout'
                     : '/api/auth/signin',
-                icon: 'github',
+                icon: 'lock',
             },
         ],
     }
