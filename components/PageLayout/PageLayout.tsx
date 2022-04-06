@@ -1,11 +1,5 @@
 import Head from 'next/head'
-import {
-    Layout,
-    Banner,
-    FooterSitemap,
-    FooterBrand,
-    Masthead,
-} from '@marceloglacial/rds-beta'
+import { Layout, Banner, FooterSitemap, FooterBrand, Masthead } from 'rds-ui'
 import { useSession } from 'next-auth/react'
 
 interface PageLayoutProps {

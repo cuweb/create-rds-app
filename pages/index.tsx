@@ -1,5 +1,5 @@
 import siteInfo from 'data/siteinfo.json'
-import { Ublock } from '@marceloglacial/rds-beta'
+import { Ublock } from 'rds-ui'
 import PageLayout from 'components/PageLayout/PageLayout'
 import { FC } from 'react'
 
