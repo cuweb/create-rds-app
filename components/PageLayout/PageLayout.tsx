@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import { Layout, Banner, FooterSitemap, FooterBrand, Masthead } from 'rds-ui'
+import { Layout, Banner, FooterSitemap, Masthead, FooterBrand } from 'rds-ui'
 import { useSession } from 'next-auth/react'
+import { MastheadProps } from 'rds-ui/dist/blocks/Masthead/Masthead'
+import { useEffect, useState } from 'react'
 
 interface PageLayoutProps {
     siteTitle: string
@@ -28,17 +30,38 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
     // @ts-ignore TODO: Create banner types
     const userInfo = sessionInfo?.data?.biographical || {}
 
-    const actions = {
-        buttons: [
+    const mastHeadProps: MastheadProps = {
+        title: siteTitle,
+        menu: [
             {
-                title: sessionInfo ? `Logout` : 'Login',
-                link: sessionInfo?.user
-                    ? '/api/auth/signout'
-                    : '/api/auth/signin',
-                icon: 'lock',
+                title: 'Option',
+                link: '#',
+                subMenu: [
+                    {
+                        title: 'SubOption',
+                        link: '#',
+                    },
+                ],
             },
         ],
+        actions: {
+            buttons: [
+                {
+                    title: sessionInfo ? `Logout` : 'Login',
+                    link: sessionInfo?.user
+                        ? '/api/auth/signout'
+                        : '/api/auth/signin',
+                    icon: 'lock',
+                },
+            ],
+        },
     }
+
+    // Make window object ready for custom hooks
+    const [isWindow, setIsWindow] = useState(false)
+    useEffect(() => {
+        setIsWindow(true)
+    }, [])
 
     return (
         <>
@@ -64,11 +87,11 @@ const PageLayout: React.FC<PageLayoutProps> = (props) => {
                     title={`Welcome to RDS ${userInfo.preferredName || ''}`}
                 />
             </header>
+            {isWindow && <Masthead {...mastHeadProps} />}
             <Layout>{children}</Layout>
             <footer>
-                <Masthead title={siteTitle} actions={actions} />
                 <FooterSitemap />
-                <FooterBrand />
+                {isWindow && <FooterBrand />}
             </footer>
         </>
     )
